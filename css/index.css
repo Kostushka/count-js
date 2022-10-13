@@ -54,3 +54,53 @@ body {
     font-size: 30px;
     font-weight: bold;
 }
+
+/* Для цветных блоков */
+.color {
+    margin-top: 200px;
+}
+
+.block-button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.button {
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: rgba(255, 166, 0, 0.705);
+    border: 1px solid rgba(255, 68, 0, 0.712);
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: rgb(224, 111, 69);
+}
+
+.color-block {
+    display: flex;
+    justify-content: center;
+}
+.color-block__first {
+    width: 200px;
+    min-height: 200px;
+    border: 2px solid blue;
+    margin-right: 20px;
+}
+.color-block__second {
+    width: 200px;
+    min-height: 200px;
+    border: 2px solid darkorchid;
+}
+.red-color {
+    background-color: red;
+}
+.green-color {
+    background-color: greenyellow;
+}
+.yellow-color {
+    background-color: yellow;
+}
