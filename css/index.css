@@ -104,3 +104,33 @@ body {
 .yellow-color {
     background-color: yellow;
 }
+
+/* Для товаров */
+
+.items {
+    display: flex;
+    margin: 150px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(226, 196, 157);
+    border: 1px solid rgb(122, 80, 25);
+    border-radius: 3px;
+    margin: 5px;
+    padding: 5px 10px;
+}
+.amount-items {
+    margin-right: 20px;
+    font-size: large;
+    align-items: center;
+}
+
+.name {
+    align-self: center;
+    color: brown;
+    font-weight: bold;
+}

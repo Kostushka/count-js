@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="css/index.css" />
     </head>
     <body>
+        <!-- таймер -->
         <div class="block">
             <span>Введите число</span>
             <input type="number" />
@@ -15,6 +16,7 @@
         </div>
         <div id="timer" class="timer"></div>
 
+        <!-- цветные блоки -->
         <div class="color">
             <div class="block-button">
                 <button id="green" class="button">Зеленый цвет</button>
@@ -27,6 +29,51 @@
             <div class="color-block">
                 <div id="first" class="color-block__first"></div>
                 <div id="second" class="color-block__second"></div>
+            </div>
+        </div>
+
+        <!-- товары -->
+        <div class="items">
+            <div class="amount-items">Все товары: <span id="all"></span></div>
+            <div id="first" class="item">
+                <div class="name">товар1</div>
+                <div>цена за одну единицу: <span id="cost0"></span></div>
+                <div>количество: <span id="item0"></span></div>
+                <input
+                    id="inputItems1"
+                    type="number"
+                    placeholder="Введите кол-во товара"
+                />
+            </div>
+            <div id="second" class="item">
+                <div class="name">товар2</div>
+                <div>цена за одну единицу: <span id="cost1"></span></div>
+                <div>количество: <span id="item1"></span></div>
+                <input
+                    id="inputItems2"
+                    type="number"
+                    placeholder="Введите кол-во товара"
+                />
+            </div>
+            <div id="third" class="item">
+                <div class="name">товар3</div>
+                <div>цена за одну единицу: <span id="cost2"></span></div>
+                <div>количество: <span id="item2"></span></div>
+                <input
+                    id="inputItems3"
+                    type="number"
+                    placeholder="Введите кол-во товара"
+                />
+            </div>
+            <div id="fourth" class="item">
+                <div class="name">товар4</div>
+                <div>цена за одну единицу: <span id="cost3"></span></div>
+                <div>количество: <span id="item3"></span></div>
+                <input
+                    id="inputItems4"
+                    type="number"
+                    placeholder="Введите кол-во товара"
+                />
             </div>
         </div>
         <script src="index.js"></script>

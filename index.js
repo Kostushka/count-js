@@ -65,82 +65,67 @@ clearButton.addEventListener('click', () => {
 });
 
 // --------------------------------------------------------------------------------------
-// const redButton = document.getElementById('red');
-// const greenButton = document.getElementById('green');
-// const yellowButton = document.getElementById('yellow');
-// const currentButton = document.getElementById('current');
-// const clearButton = document.getElementById('clear');
+const allItems = document.getElementById('all');
+let all = 800;
+allItems.innerHTML = all;
 
-// const firstBlock = document.getElementById('first');
-// const secondBlock = document.getElementById('second');
+const cost1 = document.getElementById('cost0');
+const cost2 = document.getElementById('cost1');
+const cost3 = document.getElementById('cost2');
+const cost4 = document.getElementById('cost3');
+const costs = [200, 300, 350, 432];
+function addCost(el, arr) {
+    el.innerHTML = arr[el.getAttribute('id').slice(-1)];
+}
+addCost(cost1, costs);
+addCost(cost2, costs);
+addCost(cost3, costs);
+addCost(cost4, costs);
 
-// redButton.addEventListener('click', () => applyColor(red));
-// greenButton.addEventListener('click', () => applyColor(green));
-// yellowButton.addEventListener('click', () => applyColor(yellow));
-// currentButton.addEventListener('click', applyCurrentColor);
-// clearButton.addEventListener('click', removeAll);
+const item1 = document.getElementById('item0');
+const item2 = document.getElementById('item1');
+const item3 = document.getElementById('item2');
+const item4 = document.getElementById('item3');
+let item = 200;
+function addItem(el, item) {
+    el.innerHTML = item;
+}
+addItem(item1, item);
+addItem(item2, item);
+addItem(item3, item);
+addItem(item4, item);
 
-// function firstBlockremoveColor(c1, c2) {
-//     firstBlock.classList.remove(c1);
-//     firstBlock.classList.remove(c2);
-// }
-// function secondBlockremoveColor(c1, c2) {
-//     secondBlock.classList.remove(c1);
-//     secondBlock.classList.remove(c2);
-// }
-// function removeAll() {
-//     const arrColorFirstBlock = firstBlock
-//         .getAttribute('class')
-//         .split(' ')
-//         .splice(1);
-//     arrColorFirstBlock.map((el) => firstBlock.classList.remove(el));
-//     const arrColorSecondBlock = secondBlock
-//         .getAttribute('class')
-//         .split(' ')
-//         .slice(1);
-//     arrColorSecondBlock.map((el) => secondBlock.classList.remove(el));
-// }
+const inputNum1 = document.getElementById('inputItems1');
+const inputNum2 = document.getElementById('inputItems2');
+const inputNum3 = document.getElementById('inputItems3');
+const inputNum4 = document.getElementById('inputItems4');
+const countValue = {
+    value1: 0,
+    value2: 0,
+    value3: 0,
+    value4: 0,
+};
 
-// function applyColor(color) {
-//     switch (color) {
-//         case red:
-//             firstBlockremoveColor('green-color', 'yellow-color');
-//             firstBlock.classList.add('red-color');
-//             break;
-//         case green:
-//             firstBlockremoveColor('red-color', 'yellow-color');
-//             firstBlock.classList.add('green-color');
-//             break;
-//         case yellow:
-//             firstBlockremoveColor('green-color', 'red-color');
-//             firstBlock.classList.add('yellow-color');
-//             break;
-//         default:
-//             break;
-//     }
-// }
+function onChangeValue(inputNum, valueNum, itemNum, itemAmount) {
+    inputNum.addEventListener('change', () => {
+        if (Number(inputNum.value) < 0) {
+            inputNum.value = 0;
+            alert('Введите положительное число');
+        }
 
-// function applyCurrentColor() {
-//     const color = firstBlock.getAttribute('class');
-//     const currentColor = color.split(' ').splice(1, 1).join('');
-//     switch (currentColor) {
-//         case '':
-//             break;
-//         case 'red-color':
-//             secondBlockremoveColor('green-color', 'yellow-color');
-//             secondBlock.classList.add(currentColor);
-//             break;
-
-//         case 'green-color':
-//             secondBlockremoveColor('red-color', 'yellow-color');
-//             secondBlock.classList.add(currentColor);
-//             break;
-
-//         case 'yellow-color':
-//             secondBlockremoveColor('green-color', 'red-color');
-//             secondBlock.classList.add(currentColor);
-//             break;
-//         default:
-//             break;
-//     }
-// }
+        let sum = 0;
+        let value = Number(inputNum.value);
+        for (let key in countValue) {
+            if (key === `value${valueNum}`) {
+                countValue[key] = 0 + value;
+            }
+            sum += countValue[key];
+        }
+        allItems.innerHTML = all - sum;
+        addItem(itemNum, itemAmount - value);
+    });
+}
+onChangeValue(inputNum1, '1', item1, item);
+onChangeValue(inputNum2, '2', item2, item);
+onChangeValue(inputNum3, '3', item3, item);
+onChangeValue(inputNum4, '4', item4, item);
