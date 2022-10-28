@@ -201,3 +201,19 @@ onChangeValue(hashElInput, '2', 1, item);
 onChangeValue(hashElInput, '3', 2, item);
 onChangeValue(hashElInput, '4', 3, item);
 // *** - 7
+
+
+// Начальный массив должен быть примерно такого вида
+
+const myProducts = [
+    {
+        name: 'item1',
+        cost: 200,
+        amount: 200
+    },
+    {
+        name: 'item2',
+        cost: 300,
+        amount: 300
+    },
+]
