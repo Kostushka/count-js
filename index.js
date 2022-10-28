@@ -172,9 +172,10 @@ const countValue = {
 function onChangeValue(inputNum, valueNum, itemNum, itemAmount) {
     for (let key in inputNum) {
         if (key === 'inputItems' + valueNum) {
-            inputNum[key].addEventListener('change', () => {
-                if (Number(inputNum.value) < 0) {
-                    inputNum.value = 0;
+            inputNum[key].addEventListener('change', () => { // здесь лучше поменять обработчик на input чтобы была также 
+                                                             // реакция на ввод от руки
+                if (Number(inputNum.value) < 0) {  // забыла добавить [key] в условие
+                    inputNum.value = 0; // тоже отсутствует [key]
                     alert('Введите положительное число');
                 }
 
@@ -182,12 +183,13 @@ function onChangeValue(inputNum, valueNum, itemNum, itemAmount) {
                 let value = Number(inputNum[key].value);
                 for (let key in countValue) {
                     if (key === `value${valueNum}`) {
-                        countValue[key] = 0 + value;
+                        countValue[key] = 0 + value; // непонятно для чего ноль
                     }
                     sum += countValue[key];
                 }
                 allItems.innerHTML = all - sum;
-                itemAmount.splice(itemNum, 1, itemAmount[itemNum] - 1);
+                itemAmount.splice(itemNum, 1, itemAmount[itemNum] - 1); // здесь происходит вычитание с количества
+                                                                        // вне зависимости от введенного числа
                 addValue(hashElItem, itemAmount);
             });
         }
