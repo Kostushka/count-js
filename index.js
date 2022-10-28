@@ -140,14 +140,14 @@ function createElement(...id) {
     arrId.map((id) => (hashEl[id] = document.getElementById(id)));
     return hashEl;
 }
-const hashElCost = createElement('cost0', 'cost1', 'cost2', 'cost3');
-const hashElItem = createElement('item0', 'item1', 'item2', 'item3');
+const hashElCost = createElement('cost0', 'cost1', 'cost2', 'cost3'); // *** - 1
+const hashElItem = createElement('item0', 'item1', 'item2', 'item3'); // *** - 2
 const hashElInput = createElement(
     'inputItems1',
     'inputItems2',
     'inputItems3',
     'inputItems4'
-);
+); // *** - 3
 
 function addValue(obj, arr) {
     for (let key in obj) {
@@ -156,8 +156,8 @@ function addValue(obj, arr) {
     }
 }
 
-const costs = [200, 300, 350, 432];
-const item = [200, 200, 200, 200];
+const costs = [200, 300, 350, 432]; // *** - 4
+const item = [200, 200, 200, 200]; // *** - 5
 
 addValue(hashElCost, costs);
 addValue(hashElItem, item);
@@ -167,6 +167,7 @@ const countValue = {
     value2: 0,
     value3: 0,
     value4: 0,
+    // *** - 6
 };
 
 function onChangeValue(inputNum, valueNum, itemNum, itemAmount) {
@@ -188,8 +189,8 @@ function onChangeValue(inputNum, valueNum, itemNum, itemAmount) {
                     sum += countValue[key];
                 }
                 allItems.innerHTML = all - sum;
-                itemAmount.splice(itemNum, 1, itemAmount[itemNum] - 1); // здесь происходит вычитание с количества
-                                                                        // вне зависимости от введенного числа
+                itemAmount.splice(itemNum, 1, itemAmount[itemNum] - 1); // здесь происходит только вычитание единицы с
+                                                                        // общего количества вне зависимости от введенного числа
                 addValue(hashElItem, itemAmount);
             });
         }
@@ -199,3 +200,4 @@ onChangeValue(hashElInput, '1', 0, item);
 onChangeValue(hashElInput, '2', 1, item);
 onChangeValue(hashElInput, '3', 2, item);
 onChangeValue(hashElInput, '4', 3, item);
+// *** - 7
