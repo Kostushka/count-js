@@ -196,6 +196,7 @@ function onChangeValue(inputNum, valueNum, itemNum, itemAmount) {
         }
     }
 }
+
 onChangeValue(hashElInput, '1', 0, item);
 onChangeValue(hashElInput, '2', 1, item);
 onChangeValue(hashElInput, '3', 2, item);
@@ -209,11 +210,13 @@ const myProducts = [
     {
         name: 'item1',
         cost: 200,
-        amount: 200
+        amount: 200,
+        count: 0,
     },
     {
         name: 'item2',
         cost: 300,
-        amount: 300
+        amount: 300,
+        count: 0,
     },
 ]
